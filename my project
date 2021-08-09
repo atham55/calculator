@@ -1,0 +1,54 @@
+from tkinter import*
+waste=Tk()
+waste.title('main page')
+waste.geometry('400x460')
+
+
+
+def btnc(num):
+      global operator
+      operator=operator+str(num)
+      a.set(operator)
+def btnclear():
+      global operator
+      operator=""
+      a.set(operator)
+def btneval():
+      global operator
+      oo=str(eval(operator))
+      a.set(oo)
+operator=''
+a=StringVar()
+e=Entry(waste,text=a,font='arial,20',bg='powder blue',width='20',justify="left",bd='18')
+e.grid(columnspan=4)
+b1=Button(waste,padx=8,pady=8,command=lambda:btnc(1),fg="red",bd=8,text='1',bg='powder blue',font='arial,20')
+b1.grid(row=1,column=1)
+b1=Button(waste,padx=8,pady=8,command=lambda:btnc(2),bd=8,text='2',bg='powder blue',font='arial,20')
+b1.grid(row=1,column=2)
+b1=Button(waste,padx=8,pady=8,command=lambda:btnc(3),bd=8,text='3',bg='powder blue',font='arial,20')
+b1.grid(row=1,column=3)
+b1=Button(waste,padx=8,pady=8,command=lambda:btnc(4),bd=8,text='4',bg='powder blue',font='arial,20')
+b1.grid(row=2,column=1)
+b1=Button(waste,padx=8,pady=8,command=lambda:btnc(5),bd=8,text='5',bg='powder blue',font='arial,20')
+b1.grid(row=2,column=2)
+b1=Button(waste,padx=8,pady=8,bd=8,command=lambda:btnc(6),text='6',bg='powder blue',font='arial,20')
+b1.grid(row=2,column=3)
+b1=Button(waste,padx=8,pady=8,bd=8,command=lambda:btnc(7),text='7',bg='powder blue',font='arial,20')
+b1.grid(row=3,column=1)
+b1=Button(waste,padx=8,pady=8,bd=8,command=lambda:btnc(8),text='8',bg='powder blue',font='arial,20')
+b1.grid(row=3,column=2)
+b1=Button(waste,padx=8,pady=8,bd=8,command=lambda:btnc(9),text='9',bg='powder blue',font='arial,20')
+b1.grid(row=3,column=3)
+b1=Button(waste,padx=8,pady=8,bd=8,command=lambda:btnc(0),text='0',bg='powder blue',font='arial,20')
+b1.grid(row=4,column=1)
+b1=Button(waste,padx=8,pady=8,bd=8,command=lambda:btnc("+"),text='+',bg='powder blue',font='arial,20')
+b1.grid(row=4,column=2)
+b1=Button(waste,padx=8,pady=8,bd=8,command=lambda:btnc("-"),text='-',bg='powder blue',font='arial,20')
+b1.grid(row=4,column=3)
+b1=Button(waste,padx=8,pady=8,bd=8,command=lambda:btnc("*"),text='*',bg='powder blue',font='arial,20')
+b1.grid(row=5,column=1)
+b1=Button(waste,padx=8,pady=8,bd=8,command=btnclear,text='c',bg='powder blue',font='arial,20')
+b1.grid(row=5,column=2)
+b1=Button(waste,padx=8,pady=8,bd=8,text='=',command=btneval,bg='powder blue',font='arial,20')
+b1.grid(row=5,column=3)
+mainloop()
